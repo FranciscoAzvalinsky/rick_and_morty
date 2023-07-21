@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../../fonts/miFuente.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MiFuente2';
+    src: url('../../fonts/CODE_Bold.otf') format('truetype');
+}
+
+
+
+.divForm{
+    display: flex;
+    justify-content: center; 
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 14%;
+    margin-left: 10px;
+    width: 350px;
+    height: 480px;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+    opacity: 1;
+    
+}
+
+.divDivs{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 50px;
+}
+
+.divDiv{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 350px;
+    height: 75px;
+    margin-top: 10px;
+    margin-right: -60px;
+    margin-left: -60px;
+}
+
+
+.label{
+    width: 90px;
+    color: rgb(0, 0, 0);
+    margin:3px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'MiFuente2', sans-serif ;
+    letter-spacing: 1px;
+}
+
+.p{
+    padding: 0px;
+    color: rgb(134, 1, 1);
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'MiFuente', sans-serif ;
+    margin-top: 4px;
+}
+
+.input{
+    border-radius: 0px;
+    border: 1px solid black;
+    font-size: 16px;
+    width: max-content;
+    background-color: black;
+    opacity: 0.55;
+    color: white;
+    
+}

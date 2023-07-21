@@ -1,0 +1,26 @@
+.divSelec{
+    margin-top: 2px;
+    background-color: rgb(8, 14, 31);
+    box-shadow:   5px 2px 14px rgb(16, 50, 145);
+}
+
+.selec{
+    border-radius: 5px;
+    height: 18px;
+    border: 1px solid black;
+    cursor: text;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.divCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+}

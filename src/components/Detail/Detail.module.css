@@ -1,0 +1,26 @@
+.divDetail{
+    margin-top: 5%;
+    margin-left: 42.4%;
+    color: rgb(8, 14, 31);
+    background-color:gainsboro;
+    border-radius: 10px;
+    height: 620px;
+    width: 300px;
+    box-shadow:  -5px -2px 14px rgb(200,200,200), 5px 2px 14px rgb(240,240,240);
+}
+
+.h2{
+    font-family: "miFuente2";
+    padding-top: 10px;
+}
+
+.text{
+    font-size: 20px;  
+    font-family: "miFuente2";
+}
+
+.divDiv{
+    justify-content: center;
+    margin-top: 13px;
+}
+

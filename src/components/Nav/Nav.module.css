@@ -1,0 +1,24 @@
+.navBar{
+    margin-top: 0%;
+    height: 95px;
+    background-color: rgb(8, 14, 31);
+    border-radius: 8px;
+    box-shadow:  -5px -2px 14px rgb(16, 50, 145), 5px 2px 14px rgb(16, 50, 145);
+
+}
+
+.divButtons{
+    width: 300px;
+    margin-left: 38%;
+    margin-top: 0%;
+    background-color: rgb(8, 14, 31);;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.NavLink{
+    margin-left: 15px;
+    margin-right: 15px;
+}
