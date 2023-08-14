@@ -27,7 +27,7 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
-function login(userData) {
+/*function login(userData) {
    const { email, password } = userData;
    const URL = 'http://localhost:3001/rickandmorty/login/';
    axios(`${URL}?email=${email}&password=${password}`).then(
@@ -36,6 +36,22 @@ function login(userData) {
       setAccess(response.data);
       access && navigate('/home');
    });
+}*/
+
+const login = async (userData) => {
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+   try {
+      let response = await axios(`${URL}?email=${email}&password=${password}`)
+
+      if (response?.data) {
+         const { access } = response.data;
+         setAccess(response.data);
+         access && navigate ('/home'); 
+      };
+   } catch (error) {
+      window.alert('Ha ocurrido un error al intentar hacer el login: ' + error.message)
+   }
 }
 
 const validation = (id) => {

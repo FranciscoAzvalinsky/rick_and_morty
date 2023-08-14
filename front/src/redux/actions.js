@@ -5,15 +5,7 @@ export const REMOVE_FAV = 'REMOVE_FAV';
 export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 
-
-/*export const addFav = (personaje) => {
-    return {
-        type: ADD_FAV, 
-        payload: personaje,
-    };
-}*/
-
-export const addFav = (character) => {
+/*export const addFav = (character) => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav';
     return (dispatch) => {
        axios.post(endpoint, character).then(({ data }) => {
@@ -23,28 +15,54 @@ export const addFav = (character) => {
           });
        });
     };
-    
- };
- 
+ };*/
+
+ export const addFav = (character) => {
+    const endpoint = 'http://localhost:3001/rickandmorty/fav';
+    try {
+        
+        return async (dispatch) => {
+            let response = await axios.post(endpoint, character);
+            if (response){
+                console.log('HOLA ADDFAV')
+                return dispatch({
+                    type: ADD_FAV,
+                    payload: response.data
+                })
+            }
+        }
+    } catch (error) {
+        window.alert('Ha ocurrido un error al agregar un personaje favorito: ' + error.message)
+    }
+ }
+
+
 
 /*export const removeFav = (id) => {
-    return {
-        type: REMOVE_FAV, 
-        payload: id
-    };
-}*/
-
-export const removeFav = (id) => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
     return (dispatch) => {
        axios.delete(endpoint).then(({ data }) => {
           return dispatch({
              type: REMOVE_FAV,
              payload: data,
+             
        });
        });
     };
- };
+ };*/
+
+ export const removeFav = (id) => {
+    const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
+    return async (dispatch) => {
+        let response = await axios.delete(endpoint);
+        if (response?.data){
+            return dispatch({
+                type: REMOVE_FAV,
+                payload: response.data
+            });
+        }
+    }
+}
 
 export const filterCards = (gender) => {
     return {
