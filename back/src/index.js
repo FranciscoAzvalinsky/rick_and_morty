@@ -3,6 +3,7 @@ const server = express();
 const routes = require('./routes');
 const morgan = require('morgan');
 const cors = require('cors');
+const { conn } = require('./DB_connection');
 const PORT = 3001;
 
 server.use(cors());
@@ -29,6 +30,7 @@ server.use((req, res, next) => {
 
 server.listen(PORT, () => {
     console.log('Server raised in port: ' + PORT);
+    conn.sync({force: true});
  });
 
 
