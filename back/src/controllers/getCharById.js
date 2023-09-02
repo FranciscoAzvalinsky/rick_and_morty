@@ -15,7 +15,7 @@ const getCharById = async (req, res) => {
                 gender: response.data.gender,
                 status: response.data.status,
                 species: response.data.species,
-                origin: response.data.origin.name,
+                origin: response.data.origin,
             }
             res.status(200).json(character);
         } else {
