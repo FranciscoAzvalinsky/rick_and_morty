@@ -18,13 +18,19 @@ function App() {
 
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
-   const EMAIL = 'ejemplo@gmail.com';
-   const PASSWORD = '1Password';
+   //const EMAIL = 'ejemplo@gmail.com';
+   //const PASSWORD = '1Password';
    const location = useLocation();
 
    
    useEffect(() => {
       !access && navigate('/');
+   }, [access]);
+
+   useEffect(() => {
+
+
+      access && navigate('/home');
    }, [access]);
 
 /*function login(userData) {
@@ -45,12 +51,34 @@ const login = async (userData) => {
       let response = await axios(`${URL}?email=${email}&password=${password}`)
 
       if (response?.data) {
-         const { access } = response.data;
-         setAccess(response.data);
+         //const { access } = response.data;
+         
+         await setAccess(response.data);
+         console.log('Login ' + access);
          access && navigate ('/home'); 
       };
    } catch (error) {
       window.alert('Ha ocurrido un error al intentar hacer el login: ' + error.message)
+   }
+}
+
+const signUp = async (userData) => {
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/signup/';
+   try {
+      //console.log('HOLA');
+      let response = await axios.post(`${URL}?email=${email}&password=${password}`)
+      console.log(response)
+
+      if (response?.data) {
+         //const { access } = response.data;
+         
+         await setAccess(true);
+         console.log('Signup ' + access);
+         access && navigate ('/home'); 
+      };
+   } catch (error) {
+      window.alert('Ha ocurrido un error al intentar hacer el signup: ' + error.message)
    }
 }
 
@@ -116,7 +144,7 @@ const onSearch = async (id) => {
       <div className='App'>
         {location.pathname !== '/' && <Nav onSearch={onSearch}/>} 
          <Routes>
-            <Route path='/' element ={<Form login={login}/>}/>
+            <Route path='/' element ={<Form login={login} signUp={signUp}/>}/>
             <Route path = '/home' element = {<Cards characters={characters} onClose ={onClose}/>}/>
             <Route path = '/about' element = {<About/>}/>
             <Route path = '/detail/:id' element = {<Detail/>}/>

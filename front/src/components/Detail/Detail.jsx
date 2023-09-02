@@ -30,7 +30,7 @@ export default function Detail (){
             <p className={style.text}>Status:{character.status}</p>
             <p className={style.text}>Species:{character.species}</p>
             <p className={style.text}>Gender:{character.gender}</p>
-            <p className={style.text}>Origin:{character.origin}</p>
+            <p className={style.text}>Origin:{character.origin.name}</p>
             <img src={character.image} alt='Image Not Found' />
             <div className={style.divDiv}>
                <Link to = '/home'>

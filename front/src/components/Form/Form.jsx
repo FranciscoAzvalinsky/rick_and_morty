@@ -3,7 +3,7 @@ import React from 'react';
 import validation from '../validation';
 import Button from '../Button/Button';
 
-export default function Form ({login}){
+export default function Form ({login, signUp}){
     const [userData, setUserData]= React.useState({
         email: "",
         password:"",
@@ -25,9 +25,26 @@ export default function Form ({login}){
     }
 
     function handleSubmit(e){
+
         e.preventDefault();
-        login(userData);
+        let boton = e.target.getAttribute('value');
+        console.log('boton: ' + boton);
+        if (boton === "login"){
+            login(userData);
+            console.log('ENTRE EN EL IF')
+        }
+        else if (boton === "signup"){
+            signUp(userData);
+            console.log('ENTRE EN EL ELSE')
+        }
+        /*<Button text="Login" marginTop= '0px' value='login'></Button>
+        <Button text='Sign up' marginTop='0px' value='signup'></Button>*/
     }
+
+    function onClick(e){
+        handleSubmit(e);
+    }
+    
     return (
         <div className={styles.divForm}>
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -43,7 +60,10 @@ export default function Form ({login}){
                         <p className={styles.p}>{errors.password}</p>
                     </div>
                 </div>
-                <Button text="Login" marginTop= '0px'></Button>
+                <button value='login' className={styles.cssButtonArrowBlack} onClick={onClick}>Login</button>
+                <p className={styles.label2}>No tienes cuenta? 
+                    Registrate aqui</p>
+                <button value='signup' className={styles.cssButtonArrowBlack} onClick={onClick}>Sign Up</button>
             </form>
         </div>
     );

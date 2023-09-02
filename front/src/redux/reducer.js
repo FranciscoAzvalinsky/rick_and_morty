@@ -3,6 +3,7 @@ import { ADD_FAV, REMOVE_FAV, ORDER, FILTER } from "./actions";
 const initialState = {
     myFavorites: [],
     allCharacters: [],
+    
 }
 
 const reducer = (state = initialState, action) => {
@@ -36,6 +37,7 @@ const reducer = (state = initialState, action) => {
                 myFavorites: action.payload,
                 allCharacters: action.payload
             };
+            
         case FILTER:
             if (action.payload !== "All"){
                 return {

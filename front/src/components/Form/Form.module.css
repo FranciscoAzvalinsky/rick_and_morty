@@ -63,6 +63,27 @@
     font-family: 'MiFuente2', sans-serif ;
     letter-spacing: 1px;
 }
+.label2{
+    width: 140px;
+    color: rgb(0, 0, 0);
+    margin:3px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'MiFuente2', sans-serif ;
+    letter-spacing: 1px;
+}
+.divDivs2{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 100px;
+    background-color: greenyellow;
+    border-radius: 5px;
+}
 
 .p{
     padding: 0px;
@@ -84,3 +105,41 @@
     color: white;
     
 }
+
+
+.cssButtonArrowBlack {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: #272727;
+    opacity: 0.7;
+  }
+  .cssButtonArrowBlack:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .cssButtonArrowBlack:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  .cssButtonArrowBlack:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
